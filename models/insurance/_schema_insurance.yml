@@ -10,9 +10,9 @@ models:
   - name: dim_policy
     description: "Insurance Policy Dimension"
     columns:
-    - name: policy_key
-      tests:
-      - unique
+      - name: policy_key
+        tests:
+          - unique
   - name: fact_claim
     description: "Insurance Claim Fact"
     columns:
@@ -32,13 +32,13 @@ models:
                 values: ['New Claim', 'Claim Status', 'Policy Change', 'Coverage Info', 'Billing Issue', 'Policy Renewal']
   - name: fact_interaction
     description: |
-        Customer Service Interaction Fact.
-        The grain of this table is customer + agent + date
-        Each record represents a call between a customer and an agent on a given date.
+      Customer Service Interaction Fact.
+      The grain of this table is customer + agent + date
+      Each record represents a call between a customer and an agent on a given date.
     columns:
-        - name: customer_key
-          tests:
-            - relationships:
-                arguments:
-                    to: ref('dim_customer') # the model you want to compare to
-                    field: customer_key # the field on the model you want to compare to
+      - name: customer_key
+        tests:
+          - relationships:
+              arguments:
+                  to: ref('dim_customer') # the model you want to compare to
+                  field: customer_key # the field on the model you want to compare to
