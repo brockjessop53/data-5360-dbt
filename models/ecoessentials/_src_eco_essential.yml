@@ -12,6 +12,7 @@ sources:
       - name: orders
         identifier: ORDER
       - name: ORDER_LINE
-      - name: PRODUCT
+      - name: product
+        identifier: PRODUCT
       - name: promotional_campaign
       

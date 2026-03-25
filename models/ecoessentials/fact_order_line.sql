@@ -16,7 +16,7 @@ SELECT
     ol.price_after_discount
 FROM {{source('eco_essential_landing', 'orders')}} o
 INNER JOIN {{source('eco_essential_landing', 'ORDER_LINE')}} ol ON o.order_id = ol.order_id
-INNER JOIN {{source('eco_essential_landing', 'PRODUCT')}} ps ON ps.product_id = ol.product_id
+INNER JOIN {{source('eco_essential_landing', 'product')}} ps ON ps.product_id = ol.product_id
 INNER JOIN {{ref('dim_customer')}} cu ON cu.customer_id = o.customer_id
 INNER JOIN {{ref('dim_product')}} p ON p.product_id = ol.product_id
 INNER JOIN {{ref('dim_promotional_campaign')}} c ON c.campaign_id = ol.campaign_id
