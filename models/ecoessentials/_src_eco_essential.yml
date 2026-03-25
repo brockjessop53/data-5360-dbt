@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: eco_essential_landing
+    database: brockjessop
+    schema: ECOESSENTIALS_TRANSACTIONAL_DB
+    quoting:
+      identifier: true
+
+    tables:
+      - name: customer
+      - name: orders
+        identifier: ORDER
+      - name: ORDER_LINE
+      - name: PRODUCT
+      - name: promotional_campaign
+      
