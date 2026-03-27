@@ -1,0 +1,62 @@
+version: 2
+
+models:
+
+  - name: dim_customer
+    description: >
+      Dimension table containing customer-level information sourced from the transactional system.
+      Represents unique customers and is used to link customer-related activity across fact tables.
+
+  - name: dim_product
+    description: >
+      Dimension table containing product-level attributes.
+      Provides descriptive information for products referenced in order line transactions.
+
+  - name: dim_promotional_campaign
+    description: >
+      Dimension table describing promotional campaigns.
+      Used to analyze the impact of marketing campaigns across orders and interactions.
+
+  - name: dim_date
+    description: >
+      Standard date dimension table used to support time-based analysis.
+      Enables consistent aggregation and filtering by calendar dates across fact tables.
+
+  - name: dim_timestamp
+    description: >
+      Dimension table representing timestamp-level granularity derived from event data.
+      Supports detailed time-based analysis including hour, minute, and second breakdowns.
+
+  - name: dim_email
+    description: >
+      Dimension table containing unique email identifiers.
+      Used to track and analyze email-related activity in marketing event data.
+
+  - name: dim_event
+    description: >
+      Dimension table representing types of marketing events such as sent, open, and click.
+      Provides categorical context for email marketing interactions.
+
+  - name: fact_email_marketing_events
+    description: >
+      Fact table capturing email marketing activity at the event level.
+      Each row represents a marketing event (e.g., sent, open, click) and links to relevant dimensions
+      such as customer, campaign, timestamp, and event type.
+
+  - name: fact_order_line
+    description: >
+      Fact table representing individual order line transactions.
+      Each row corresponds to a product within an order and includes pricing, quantity,
+      discount, and associated dimensional context such as customer, product, campaign, and date.
+
+  - name: fact_claim
+    description: >
+      Fact table capturing claim-level activity.
+      Each row represents a claim event and is linked to relevant dimensions such as customer
+      and other supporting entities.
+
+  - name: fact_interaction
+    description: >
+      Fact table representing customer interactions.
+      Tracks interactions between customers and the business, enabling analysis of engagement patterns
+      and behavior over time.
