@@ -5,8 +5,7 @@ sources:
     database: brockjessop
     schema: ECOESSENTIALS_TRANSACTIONAL_DB
     quoting:
-      identifier: true
-
+      identifier: false
     tables:
       - name: customer
         identifier: CUSTOMER
@@ -16,12 +15,12 @@ sources:
       - name: product
         identifier: PRODUCT
       - name: promotional_campaign
+        identifier: PROMOTIONAL_CAMPAIGN
   - name: email_landing
     database: brockjessop
     schema: EMAIL_SOURCE
     quoting:
-      identifier: true
-    
+      identifier: false
     tables:
       - name: MARKETINGEMAILS
       
