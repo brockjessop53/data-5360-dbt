@@ -54,7 +54,7 @@ models:
       - name: eventtype
         tests:
           - accepted_values:
-              arguments: ['SENT', 'CLICK', 'OPEN']
+              values: ['SENT', 'CLICK', 'OPEN']
   - name: fact_email_marketing_events
     description: 'Fact table capturing email marketing activity at the event level.
       Each row represents a marketing event (e.g., sent, open, click) and links to relevant dimensions
