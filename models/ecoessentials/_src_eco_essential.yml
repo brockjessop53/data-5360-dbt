@@ -10,7 +10,7 @@ sources:
       - name: customer
         identifier: CUSTOMER
       - name: orders
-        identifier: ORDER
+        identifier: '"ORDER"'
       - name: ORDER_LINE
       - name: product
         identifier: PRODUCT
