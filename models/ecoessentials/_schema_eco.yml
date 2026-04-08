@@ -48,15 +48,3 @@ models:
       Fact table representing individual order line transactions.
       Each row corresponds to a product within an order and includes pricing, quantity,
       discount, and associated dimensional context such as customer, product, campaign, and date.
-
-  - name: fact_claim
-    description: >
-      Fact table capturing claim-level activity.
-      Each row represents a claim event and is linked to relevant dimensions such as customer
-      and other supporting entities.
-
-  - name: fact_interaction
-    description: >
-      Fact table representing customer interactions.
-      Tracks interactions between customers and the business, enabling analysis of engagement patterns
-      and behavior over time.

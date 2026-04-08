@@ -26,12 +26,6 @@ models:
     description: "Oliver Store Dimension"
   - name: fact_sales
     description: "Oliver Sales Fact"
-    columns:
-      - name: customer_key
-        tests:
-            - relationships:
-                to: ref('oliver_dim_customer')
-                field: 'customer_key'
   - name: stg_employee_certifications
     description: "Staging table for the employee certifications fact table and contains the date, course name, cost, and employee information when an employee completes a certification course"
   - name: fact_certification

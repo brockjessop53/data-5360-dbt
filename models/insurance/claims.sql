@@ -16,14 +16,14 @@ a.lastname as agent_last_name,
 f.claimamount
 FROM {{ ref('fact_claim') }} f
 
-LEFT JOIN {{ ref('dim_customer') }} c
+LEFT JOIN {{ ref('dim_customers') }} c
     ON f.customer_key = c.customer_key
 
-LEFT JOIN {{ ref('dim_agent') }} a
+LEFT JOIN {{ ref('dim_agents') }} a
     ON f.agent_key = a.agent_key
 
-LEFT JOIN {{ ref('dim_policy') }} p
+LEFT JOIN {{ ref('dim_policys') }} p
     ON f.policy_key = p.policy_key
 
-LEFT JOIN {{ ref('dim_date') }} d
+LEFT JOIN {{ ref('dim_dates') }} d
     ON f.date_key = d.date_key
