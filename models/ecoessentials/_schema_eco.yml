@@ -63,8 +63,8 @@ models:
       - name: customer_key
         tests:
           - relationships:
-                name: ref('dim_customer')
-                column_name: customer_key
+                to: ref('dim_customer')
+                field: customer_key
   - name: fact_order_line
     description: 'Fact table representing individual order line transactions.
       Each row corresponds to a product within an order and includes pricing, quantity,
@@ -73,5 +73,5 @@ models:
       - name: customer_key
         tests:
           - relationships:
-                name: ref('dim_customer')
-                column_name: customer_key
+                to: ref('dim_customer')
+                field: customer_key
