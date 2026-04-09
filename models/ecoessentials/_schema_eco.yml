@@ -45,7 +45,10 @@ models:
   - name: dim_email
     description: 'Dimension table containing unique email identifiers.
       Used to track and analyze email-related activity in marketing event data.'
-    
+    columns:
+      - name: email_key
+        tests:
+          - not_null
 
   - name: dim_event
     description: 'Dimension table representing types of marketing events such as sent, open, and click.
